@@ -12,6 +12,8 @@ before_install:
   - gcloud components update kubectl
   - gcloud auth activate-service-account --key-file service-account.json
   - gcloud config set project multi-k8s-287015
+  - gcloud config set compute/zone europe-west1-b
+  - gcloud container clusters get-credentials multi-cluster
   - echo "$DOCKER_PASSWORD" | docker login -u "$DOCKER_USERNAME" --password-stdin
   - docker build -t bartek26/react-test -f ./client/Dockerfile.dev ./client
 
@@ -23,7 +25,3 @@ deploy:
   script: bash ./deploy.sh
   on:
     branch: master
-
-
-  # - gcloud config set compute/zone europe-west1-b
-  # - gcloud container clusters get-credentials multi-cluster
