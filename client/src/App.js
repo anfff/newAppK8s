@@ -1,29 +1,23 @@
-import React, { Component } from 'react';
-import logo from './logo.svg';
-import './App.css';
-import { BrowserRouter as Router, Route, Link } from 'react-router-dom';
-import OtherPage from './OtherPage';
-import Fib from './Fib';
+import React, {Fragment} from 'react';
+import { BrowserRouter as Router, Route, Switch, Redirect } from 'react-router-dom';
 
-class App extends Component {
-  render() {
-    return (
-      <Router>
-        <div className="App">
-          <header className="App-header">
-            <img src={logo} className="App-logo" alt="logo" />
-            <h1 className="App-title">Fib Calculator version 2</h1>
-            <Link to="/">Home</Link>
-            <Link to="/otherpage">Other Pagess</Link>
-          </header>
-          <div>
-            <Route exact path="/" component={Fib} />
-            <Route path="/otherpage" component={OtherPage} />
-          </div>
-        </div>
-      </Router>
-    );
-  }
-}
+import OtherPage from './containers/OtherPage/OtherPage';
+import Fib from './containers/Fib/Fib';
+import MainNavigation from './components/Navigation/MainNavigation'
+
+const App = () => {
+	return (
+		<Router>
+            <Fragment>
+                <MainNavigation/>
+                    <Switch>
+                        <Route path="/" exact><Fib /></Route>
+                        <Route path="/authors" exact><OtherPage/></Route>
+                        <Redirect to="/"/>
+                    </Switch>
+            </Fragment>
+        </Router>
+	);
+};
 
 export default App;

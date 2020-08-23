@@ -1,0 +1,41 @@
+.index-wrapper {
+    position: relative;
+    /* as parent */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 0 0 1rem;
+    margin: 3rem 3rem;
+}
+
+.index-wrapper:before {
+    content: "";
+    background: white;
+    position: absolute;
+    top: 0;
+    right: 5%;
+    height: 1px;
+    width: 90%;
+}
+
+.index-wrapper__info {
+    /* as parent */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+
+    /* as child */
+    flex-grow: 1;
+
+    margin: 2rem;
+}
+
+.index-wrapper__indexes {
+    /* as parent */
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: flex-start;
+}
+

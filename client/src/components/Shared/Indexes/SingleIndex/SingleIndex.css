@@ -1,0 +1,27 @@
+.single-index {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    
+
+    width: 3rem;
+    height: 3rem;
+    border: 2px solid white;
+    border-radius: 50%;
+    background-color: rgb(22, 21, 21);
+    color: #f8df00;
+    font-weight: bold;
+    margin: 10px 10px;
+
+    transition: all .3s linear;
+    
+}
+
+.single-index:hover,
+.single-index__active {
+    background-color: #f8df00;
+    border-color: rgb(22, 21, 21);
+    color:rgb(22, 21, 21);
+    cursor: pointer;
+}

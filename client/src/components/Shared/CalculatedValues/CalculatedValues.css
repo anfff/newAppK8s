@@ -1,0 +1,46 @@
+.calculated-values-wrapper {
+    position: relative;
+    /* as parent */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 0 0 1rem;
+    margin: 0 3rem;
+}
+
+.calculated-values-wrapper:before {
+    content: "";
+    background: white;
+    position: absolute;
+    top: 0;
+    right: 5%;
+    height: 1px;
+    width: 90%;
+}
+
+
+.calculated-values__info {
+    /* as parent */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+
+    /* as child */
+    flex-grow: 1;
+
+    margin: 2rem;
+}
+
+.calculated-values__values {
+    /* as parent */
+    display: flex;
+    flex-direction: column;
+    
+    justify-content: flex-start;
+    width: 100%;
+}
+
+.calculated-values__header {
+    width: 100%;
+}
